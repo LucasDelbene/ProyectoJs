@@ -1,0 +1,10 @@
+.body{
+   background-image: url(../img/background.jpg);
+   background-repeat: no-repeat;
+   background-position: center center;
+   height: 1800px;
+   background-attachment: fixed;
+   background-size: cover;
+   margin-top: 250px;
+   overflow-y: scroll;
+}
