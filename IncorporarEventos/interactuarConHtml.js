@@ -19,12 +19,45 @@ const arrayPistas = [pista1, pista2, pista3, pista4, pista5]
 const divAdivinanzas = document.getElementById("adivinanzas")
 
 arrayPistas.forEach( arrayPistas => {
-    divAdivinanzas.innerHTML += `
-    <div id="${arrayPistas.id}" class="pistas">
+    divAdivinanzas.innerHTML += 
+    `<div id="${arrayPistas.id}" class="pistas">
        <p class="parrafo">PAIS: ${arrayPistas.pais}</p>
        <p class="parrafo">POSICION: ${arrayPistas.posicion}</p>
        <p class="parrafo">EQUIPO: ${arrayPistas.equipo}</p>
        <p class="parrafo">DATOS: ${arrayPistas.datos}</p>
-    </div>
-    `
+    </div>`
 })
+
+const botonHulk = document.getElementById("botonHulk")
+botonHulk.addEventListener("click", () =>{
+  alert("EL JUGADOR ES HULK.")
+})
+
+
+const botonTevez = document.getElementById("botonTevez")
+botonTevez.addEventListener("click", () =>{
+    alert("EL JUGADOR ES TEVEZ.")
+})
+
+const botonJulianAlvarez = document.getElementById("botonJulianAlvarez")
+botonJulianAlvarez.addEventListener("click", () =>{
+    alert("EL JUGADOR ES JULIAN ALVAREZ.")
+})
+
+const botonFalcao = document.getElementById("botonFalcao")
+botonFalcao.addEventListener("click", () =>{
+    alert("EL JUGADOR ES FALCAO.")    
+})
+
+const botonMessi = document.getElementById("botonMessi")
+botonMessi.addEventListener("click", () =>{
+    alert("EL JUGADOR ES MESSI.") 
+})
+
+const inputColor = document.getElementById("inputColor")
+inputColor.addEventListener("input", () => {
+    document.body.style.background = inputColor.value
+    console.log(inputColor.value)
+})
+
+
