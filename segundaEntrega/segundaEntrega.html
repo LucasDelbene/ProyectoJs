@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADIVINA EL JUGADOR DE FÚTBOL</title>
+    <link rel="stylesheet" href="segundaEntrega.css">
+</head>
+
+<body class="body">
+
+   
+    <div class="row my-4">
+        <h2 class="titleRegistro">REGISTRATE PARA SABER LA RESPUESTA DE LAS ADIVINANZAS</h2>
+        <form class="col-xl-6 col-md-12" id="formulario">
+            <label for="nombre" class="form-label">NOMBRE</label>
+            <input type="text" class="form-control" id="nombre">
+    
+            <label for="peso" class="form-label">APELLIDO</label>
+            <input type="text" class="form-control" id="apellido">
+
+            <label for="altura" class="form-label">EDAD</label>
+            <input type="number" class="form-control" id="edad">
+
+            <label for="email" class="form-label">CORREO ELECTRÓNICO</label>
+            <input type="email" class="form-control" id="email" required>
+
+            <button type="submit" id="botonRegistro">REGISTRARSE</button>
+
+        
+            <div id="datosRegistro"></div>
+            
+        </form>
+        
+        
+    </div>
+
+    <div id="infoPersonas"></div>
+    
+
+    <div id="adivinanzas"></div>
+    
+    <div id="botones">
+        <button id="botonHulk"> ADIVINANZA (1)</button>
+        <button id="botonTevez">ADIVINANZA (2)</button>
+        <button id="botonJulianAlvarez">ADIVINANZA (3)</button>
+        <button id="botonFalcao">ADIVINANZA (4)</button>
+        <button id="botonMessi">ADIVINANZA (5)</button>
+        <input type="color" id="inputColor">
+    </div>
+
+    <script src="segundaEntrega.js"></script>
+</body>
+</html>

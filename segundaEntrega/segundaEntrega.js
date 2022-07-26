@@ -1,3 +1,5 @@
+// ARRAYS, FUNCIONES, DOM, METODOS
+
 class Pistas{
     constructor(id, pais, posicion, equipo, datos){
         this.id = id;
@@ -30,28 +32,28 @@ arrayPistas.forEach( arrayPistas => {
 
 const botonHulk = document.getElementById("botonHulk")
 botonHulk.addEventListener("click", () =>{
-  alert("EL JUGADOR ES HULK.")
+  console.log("EL JUGADOR ES HULK.")
 })
 
 
 const botonTevez = document.getElementById("botonTevez")
 botonTevez.addEventListener("click", () =>{
-    alert("EL JUGADOR ES TEVEZ.")
+    console.log("EL JUGADOR ES TEVEZ.")
 })
 
 const botonJulianAlvarez = document.getElementById("botonJulianAlvarez")
 botonJulianAlvarez.addEventListener("click", () =>{
-    alert("EL JUGADOR ES JULIAN ALVAREZ.")
+    console.log("EL JUGADOR ES JULIAN ALVAREZ.")
 })
 
 const botonFalcao = document.getElementById("botonFalcao")
 botonFalcao.addEventListener("click", () =>{
-    alert("EL JUGADOR ES FALCAO.")    
+    console.log("EL JUGADOR ES FALCAO.")    
 })
 
 const botonMessi = document.getElementById("botonMessi")
 botonMessi.addEventListener("click", () =>{
-    alert("EL JUGADOR ES MESSI.") 
+    console.log("EL JUGADOR ES MESSI.") 
 })
 
 const inputColor = document.getElementById("inputColor")
@@ -59,5 +61,58 @@ inputColor.addEventListener("input", () => {
     document.body.style.background = inputColor.value
     console.log(inputColor.value)
 })
+
+
+// STORAGE & JSON
+ 
+class Persona {
+    constructor (nombre, apellido, edad, email) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.email = email;
+    }
+}
+
+const personas = [];
+
+const idFormulario = document.getElementById('formulario');
+
+idFormulario.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const edad = document.getElementById('edad').value;
+    const email = document.getElementById('email').value;
+
+    const persona = new Persona (nombre, apellido, edad, email);
+    personas.push(persona); 
+
+    localStorage.setItem('Persona', JSON.stringify(personas));
+    idFormulario.reset();
+
+    mostrarInfo(persona);
+})
+
+
+const resultado = document.getElementById('infoPersonas');
+
+
+//MUESTRO EN localStorage.
+
+const botonRegistro = document.getElementById('registrar');
+const datosRegistro = document.getElementById('datosRegistro');
+
+botonRegistro.addEventListener('click', () => {
+    const personas = JSON.parse(localStorage.getItem('Persona'));
+    let aux = '';
+    personas.forEach(persona => {
+        aux += `<p class="resultado"> Nombre: ${persona.nombre} </p>
+                <p class="resultado"> Apellido: ${persona.apellido}</p>
+                <p class="resultado"> Edad: ${persona.edad}</p>
+                <p class="resultado"> Correo Electronico: ${persona.email}</p>`
+    });
+    datosRegistro.innerHTML = aux;
+});
 
 
